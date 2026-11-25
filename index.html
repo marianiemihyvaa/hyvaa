@@ -56,13 +56,14 @@
   /* Innehåll */
   main { padding: 2.5rem 0 3rem; }
   section { margin: 0 0 3rem; }
+  section:last-child { margin-bottom: 0; }
   h2 { font-family: var(--rubrik); font-weight: 700; font-size: clamp(1.6rem, 4vw, 2rem); line-height: 1.25; margin: 0 0 1rem; }
   .ingress {
     background: var(--beige);
     border-left: 6px solid var(--orange);
     padding: 1.5rem 1.75rem;
     font-size: 1.25rem;
-    margin: 0 0 3rem;
+    margin: 0;
   }
   .ingress p { margin: 0 0 .75rem; }
   .ingress p:last-child { margin: 0; }
@@ -117,25 +118,16 @@
 
 <nav class="meny" aria-label="Huvudmeny">
   <ul>
-    <li><a href="#om">Om Hyvää</a></li>
     <li><a href="#tjanster">Tjänster</a></li>
     <li><a href="#uppdragsgivare">Uppdragsgivare</a></li>
     <li><a href="#varderingar">Värderingar</a></li>
     <li><a href="#kontakt">Kontakt</a></li>
+    <li><a href="#om">Om Hyvää</a></li>
   </ul>
 </nav>
 
 <main id="innehall">
   <div class="bredd">
-
-    <section id="om" aria-labelledby="om-rubrik">
-      <h2 id="om-rubrik">Om Hyvää</h2>
-      <div class="ingress">
-        <p>Hyvää är ett svenskt konsultföretag inom kommunikation och digital utveckling. Hyvää hjälper organisationer att kommunicera så att alla förstår och känner sig inkluderade.</p>
-        <p>Företaget grundades 2014 av Maria Niemi, som är vd, senior strateg, redaktör och föreläsare. Sedan 2018 drivs Hyvää som aktiebolag.</p>
-        <p>Namnet betyder ”bra” på meänkieli.</p>
-      </div>
-    </section>
 
     <section id="tjanster" aria-labelledby="tjanster-rubrik">
       <h2 id="tjanster-rubrik">Tjänster</h2>
@@ -177,6 +169,15 @@
       <p>E-post: <a href="mailto:info@hyvaa.se">info@hyvaa.se</a></p>
       <p>Telefon: <a href="tel:+46702500307">070-250 03 07</a></p>
       <a class="knapp" href="mailto:info@hyvaa.se">Mejla Hyvää</a>
+    </section>
+
+    <section id="om" aria-labelledby="om-rubrik">
+      <h2 id="om-rubrik">Om Hyvää</h2>
+      <div class="ingress">
+        <p>Hyvää är ett svenskt konsultföretag inom kommunikation och digital utveckling. Hyvää hjälper organisationer att kommunicera så att alla förstår och känner sig inkluderade.</p>
+        <p>Företaget grundades 2014 av Maria Niemi, som är vd, senior strateg, redaktör och föreläsare. Sedan 2018 drivs Hyvää som aktiebolag.</p>
+        <p>Namnet betyder ”bra” på meänkieli.</p>
+      </div>
     </section>
 
   </div>
