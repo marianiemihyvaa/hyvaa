@@ -45,8 +45,15 @@
 
   /* Sidhuvud */
   header.topp { background: var(--vit); text-align: center; padding: 2.5rem 0 1.5rem; }
-  .logo { margin: 0; line-height: 0; }
-  .logo img { width: min(240px, 60vw); height: auto; }
+  .ordmarke {
+    font-family: "Brush Script MT", "Segoe Script", cursive;
+    font-size: clamp(3.5rem, 12vw, 6rem);
+    line-height: 1;
+    color: var(--orange);
+    text-shadow: 3px 3px 0 var(--turkos);
+    margin: 0;
+    font-weight: 400;
+  }
   .slogan { font-style: italic; color: var(--rost-mork); margin: .75rem 0 0; font-size: 1.25rem; }
   nav.meny { background: var(--kram); border-top: 1px solid var(--sidfot); border-bottom: 1px solid var(--sidfot); }
   nav.meny ul { list-style: none; margin: 0; padding: .5rem 0; display: flex; flex-wrap: wrap; justify-content: center; gap: .25rem 1.5rem; }
@@ -111,7 +118,7 @@
 
 <header class="topp">
   <div class="bredd">
-    <h1 class="logo"><img src="logo.png" alt="Hyvää" width="240" height="192"></h1>
+    <h1 class="ordmarke">Hyvää</h1>
     <p class="slogan">Bra kommunikation för bra saker</p>
   </div>
 </header>
