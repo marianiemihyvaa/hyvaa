@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hyvää – bra kommunikation för bra saker</title>
+<meta name="description" content="Hyvää är ett konsultföretag inom kommunikation och digital utveckling för offentlig och ideell sektor. Tillgängligt, begripligt och inkluderande.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;700&family=Source+Sans+3:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --orange: #ED6E24;
+    --turkos: #8BCDCC;
+    --beige: #F4EEC9;
+    --rost: #CA3C08;
+    --rost-mork: #BC360A;
+    --kram: #F7F5E7;
+    --sidfot: #E8E5CE;
+    --text: #141412;
+    --varmgra: #686758;
+    --vit: #FFFFFF;
+    --rubrik: "Bitter", Georgia, serif;
+    --brod: "Source Sans 3", "Source Sans Pro", Helvetica, Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: var(--brod);
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: var(--text);
+    background: var(--vit);
+  }
+  a { color: var(--rost); text-underline-offset: 3px; }
+  a:hover { color: var(--rost-mork); }
+  a:focus-visible, button:focus-visible { outline: 3px solid var(--text); outline-offset: 3px; }
+  .hoppa {
+    position: absolute; left: -9999px; top: 0;
+    background: var(--text); color: var(--vit); padding: .5rem 1rem; z-index: 10;
+  }
+  .hoppa:focus { left: 1rem; top: 1rem; color: var(--vit); }
+  .bredd { max-width: 960px; margin: 0 auto; padding: 0 1rem; }
+
+  /* Sidhuvud */
+  header.topp { background: var(--vit); text-align: center; padding: 2.5rem 0 1.5rem; }
+  .ordmarke {
+    font-family: "Brush Script MT", "Segoe Script", cursive;
+    font-size: clamp(3.5rem, 12vw, 6rem);
+    line-height: 1;
+    color: var(--orange);
+    text-shadow: 3px 3px 0 var(--turkos);
+    margin: 0;
+    font-weight: 400;
+  }
+  .slogan { font-style: italic; color: var(--rost-mork); margin: .75rem 0 0; font-size: 1.25rem; }
+  nav.meny { background: var(--kram); border-top: 1px solid var(--sidfot); border-bottom: 1px solid var(--sidfot); }
+  nav.meny ul { list-style: none; margin: 0; padding: .5rem 0; display: flex; flex-wrap: wrap; justify-content: center; gap: .25rem 1.5rem; }
+  nav.meny a { color: var(--text); text-decoration: none; display: inline-block; padding: .5rem .25rem; }
+  nav.meny a:hover { color: var(--rost); text-decoration: underline; }
+
+  /* Innehåll */
+  main { padding: 2.5rem 0 3rem; }
+  section { margin: 0 0 3rem; }
+  h2 { font-family: var(--rubrik); font-weight: 700; font-size: clamp(1.6rem, 4vw, 2rem); line-height: 1.25; margin: 0 0 1rem; }
+  .ingress {
+    background: var(--beige);
+    border-left: 6px solid var(--orange);
+    padding: 1.5rem 1.75rem;
+    font-size: 1.25rem;
+    margin: 0 0 3rem;
+  }
+  .ingress p { margin: 0 0 .75rem; }
+  .ingress p:last-child { margin: 0; }
+
+  .tjanster { list-style: none; padding: 0; margin: 0; display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+  .tjanster li {
+    background: var(--kram);
+    border-top: 4px solid var(--turkos);
+    padding: 1.25rem 1.25rem 1.1rem;
+    font-family: var(--rubrik);
+    font-weight: 700;
+    color: var(--rost);
+    font-size: 1.15rem;
+  }
+  .tjanster li span { display: block; font-family: var(--brod); font-weight: 400; color: var(--text); font-size: 1rem; margin-top: .35rem; }
+
+  .kunder { display: flex; flex-wrap: wrap; gap: .5rem; padding: 0; list-style: none; margin: 1rem 0 0; }
+  .kunder li { border: 1px solid var(--sidfot); background: var(--vit); padding: .3rem .8rem; border-radius: 999px; font-size: 1rem; }
+
+  .ledord { display: flex; flex-wrap: wrap; gap: .75rem; margin: 0 0 1rem; padding: 0; list-style: none; }
+  .ledord li { background: var(--orange); color: var(--text); font-family: var(--rubrik); font-weight: 700; padding: .4rem 1rem; border-radius: 4px; }
+
+  .kontakt { background: var(--kram); padding: 2rem 1.75rem; border-top: 4px solid var(--orange); }
+  .kontakt p { margin: 0 0 .5rem; }
+  .knapp {
+    display: inline-block; margin-top: 1rem; background: var(--rost); color: var(--vit);
+    padding: .75rem 1.5rem; border-radius: 4px; text-decoration: none; font-weight: 700;
+  }
+  .knapp:hover { background: var(--rost-mork); color: var(--vit); }
+
+  footer.botten { background: var(--sidfot); color: var(--varmgra); font-size: .95rem; padding: 1.5rem 0; border-top: 3px solid var(--turkos); }
+  footer.botten p { margin: 0; text-align: center; }
+  footer.botten a { color: var(--text); }
+
+  @media (max-width: 600px) {
+    body { font-size: 1.0625rem; }
+    .ingress { padding: 1.25rem; font-size: 1.125rem; }
+    .kontakt { padding: 1.5rem 1.25rem; }
+  }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
+</head>
+<body>
+<a class="hoppa" href="#innehall">Hoppa till innehållet</a>
+
+<header class="topp">
+  <div class="bredd">
+    <p class="ordmarke" aria-label="Hyvää">Hyvää</p>
+    <p class="slogan">Bra kommunikation för bra saker</p>
+  </div>
+</header>
+
+<nav class="meny" aria-label="Huvudmeny">
+  <ul>
+    <li><a href="#om">Om Hyvää</a></li>
+    <li><a href="#tjanster">Tjänster</a></li>
+    <li><a href="#uppdragsgivare">Uppdragsgivare</a></li>
+    <li><a href="#varderingar">Värderingar</a></li>
+    <li><a href="#kontakt">Kontakt</a></li>
+  </ul>
+</nav>
+
+<main id="innehall">
+  <div class="bredd">
+
+    <section id="om" aria-labelledby="om-rubrik">
+      <h2 id="om-rubrik">Om Hyvää</h2>
+      <div class="ingress">
+        <p>Hyvää är ett svenskt konsultföretag inom kommunikation och digital utveckling. Hyvää hjälper organisationer att kommunicera så att alla förstår och känner sig inkluderade.</p>
+        <p>Företaget grundades 2014 av Maria Niemi, som är vd, senior strateg, redaktör och föreläsare. Sedan 2018 drivs Hyvää som aktiebolag.</p>
+        <p>Namnet betyder ”bra” på meänkieli.</p>
+      </div>
+    </section>
+
+    <section id="tjanster" aria-labelledby="tjanster-rubrik">
+      <h2 id="tjanster-rubrik">Tjänster</h2>
+      <ul class="tjanster">
+        <li>Strategisk kommunikation<span>Planer och strategier som håller över tid.</span></li>
+        <li>Digital utveckling<span>Webb och digitala tjänster som fungerar för alla.</span></li>
+        <li>Normkreativ kommunikation<span>Även som distanskurs.</span></li>
+        <li>Skrivande och redaktörskap<span>Texter som är lätta att förstå.</span></li>
+        <li>Föreläsningar<span>Kunskap och inspiration för er organisation.</span></li>
+      </ul>
+    </section>
+
+    <section id="uppdragsgivare" aria-labelledby="uppdrag-rubrik">
+      <h2 id="uppdrag-rubrik">Uppdragsgivare</h2>
+      <p>Hyvää arbetar främst med samhällsuppdrag inom offentlig och ideell sektor. Uppdragsgivarna är bland annat myndigheter, kommuner, regioner, fackförbund, ideella organisationer och utbildningsanordnare.</p>
+      <p>Hyvää har högst tre uppdragsgivare åt gången. Det ger tid för varje uppdrag.</p>
+      <p>Några som har anlitat Hyvää:</p>
+      <ul class="kunder">
+        <li>SCB</li>
+        <li>DIK</li>
+        <li>RFSL</li>
+        <li>Stockholms stadsbibliotek</li>
+        <li>Nackademin</li>
+      </ul>
+    </section>
+
+    <section id="varderingar" aria-labelledby="varden-rubrik">
+      <h2 id="varden-rubrik">Värderingar</h2>
+      <ul class="ledord" aria-label="Ledord">
+        <li>Tillgängligt</li>
+        <li>Begripligt</li>
+        <li>Inkluderande</li>
+      </ul>
+      <p>Hyvää utgår från användarnas behov och arbetar med klarspråk och normkreativitet. Hyvää verkar för jämlikhet och schyssta villkor och konkurrerar med kvalitet och värderingar, inte med låga priser.</p>
+    </section>
+
+    <section id="kontakt" aria-labelledby="kontakt-rubrik" class="kontakt">
+      <h2 id="kontakt-rubrik">Hör av dig till Hyvää!</h2>
+      <p>E-post: <a href="mailto:info@hyvaa.se">info@hyvaa.se</a></p>
+      <p>Telefon: <a href="tel:+46702500307">070-250 03 07</a></p>
+      <a class="knapp" href="mailto:info@hyvaa.se">Mejla Hyvää</a>
+    </section>
+
+  </div>
+</main>
+
+<footer class="botten">
+  <div class="bredd">
+    <p>Hyvää AB · <a href="https://www.hyvaa.se">www.hyvaa.se</a></p>
+  </div>
+</footer>
+</body>
+</html>
